@@ -5,6 +5,7 @@ const {connectDB} = require("./config/db")
 
 const PostRoute = require("./routing/postRoute");
 const AuthRoute = require("./routing/authRoute");
+const errorHandler = require("./middleware/errorHandler");
 
 const app = express();
 
@@ -18,6 +19,8 @@ app.use(express.json());
 
 app.use("/api",PostRoute);
 app.use("/api/user",AuthRoute)
+
+app.use(errorHandler)
 
 app.listen(Port,err=>{
     if(err) throw err;

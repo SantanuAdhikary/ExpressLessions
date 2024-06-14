@@ -16,7 +16,8 @@ let postSchema = new Schema(
         {
             type:String,
             required:true
-        }
+        },
+       
     },
     {
         timeseries:true
